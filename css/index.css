@@ -1,3 +1,8 @@
+@media (max-width: 320px) {
+  .item-2 .qian {
+    padding-top: 6rem !important;
+  }
+}
 html,
 body {
   margin: 0;
@@ -39,12 +44,12 @@ body {
   width: 100%;
 }
 .item-2 .qian {
-  padding-top: 6rem;
-  height: 10.5rem;
+  padding-top: 8rem;
+  margin-bottom: .5rem;
 }
 .item-2 .wenzi {
   position: relative;
-  top: -30px;
+  top: -35px;
 }
 .item-2 .wenzi div {
   color: #ff0000;

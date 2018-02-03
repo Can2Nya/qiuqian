@@ -10,6 +10,9 @@ body {
   bottom: 0;
   overflow: hidden;
 }
+.page {
+  box-sizing: border-box;
+}
 .item {
   width: 100%;
   height: 100%;
@@ -19,7 +22,6 @@ body {
 .item-2 {
   background: url('/img/02/bg.jpg');
   background-size: cover;
-  background-position: center;
   text-align: center;
   background-repeat: no-repeat;
 }
@@ -38,11 +40,17 @@ body {
 }
 .item-2 .qian {
   padding-top: 6rem;
-  height: 12rem;
+  height: 10.5rem;
 }
 .item-2 .wenzi {
   position: relative;
   top: -30px;
+}
+.item-2 .wenzi div {
+  color: #ff0000;
+  font-size: 1rem;
+  position: relative;
+  top: 3rem;
 }
 .item-2 .dixia {
   position: absolute;

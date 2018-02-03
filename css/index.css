@@ -58,6 +58,6 @@ body {
   top: 3.2rem;
 }
 .item-2 .dixia {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  top: -5px;
 }

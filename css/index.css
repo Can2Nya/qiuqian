@@ -5,10 +5,25 @@
   .item-2 .qian {
     padding-top: 6rem !important;
   }
+  .item-2 .wenzi .t {
+    font-size: 1rem !important;
+  }
+  .item-2 .wenzi div {
+    font-size: .7rem !important;
+  }
 }
 @media (min-width: 414px) {
   .item-1 .qiuqian {
     margin-top: 8rem !important;
+  }
+  .item-2 .qian {
+    padding-top: 8rem !important;
+  }
+  .item-2 .wenzi .t {
+    font-size: 1.5rem !important;
+  }
+  .item-2 .wenzi div {
+    font-size: 1rem !important;
   }
 }
 html,
@@ -94,7 +109,7 @@ body {
   z-index: -1;
 }
 .item-2 .qian {
-  padding-top: 8rem;
+  padding-top: 7rem;
   margin-bottom: .5rem;
 }
 .item-2 .wenzi {
@@ -103,12 +118,12 @@ body {
 }
 .item-2 .wenzi div {
   color: #ff0000;
-  font-size: 1rem;
+  font-size: .9rem;
   position: relative;
   top: 3.2rem;
 }
 .item-2 .wenzi .t {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 .item-2 .dixia {
   position: relative;

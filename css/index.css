@@ -17,7 +17,7 @@ body {
 }
 body {
   background: url('/img/01/bg.jpg');
-  background-size: contain;
+  background-size: cover;
   text-align: center;
   background-repeat: no-repeat;
 }
@@ -83,7 +83,7 @@ body {
 }
 .item-2 .bg {
   background: url('/img/01/bg.jpg');
-  background-size: contain;
+  background-size: cover;
   text-align: center;
   background-repeat: no-repeat;
   width: 100%;

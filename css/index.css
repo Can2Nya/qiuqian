@@ -1,9 +1,14 @@
 @media (max-width: 320px) {
   .item-1 #next {
-    margin-top: 2rem;
+    margin-top: 2rem !important;
   }
   .item-2 .qian {
     padding-top: 6rem !important;
+  }
+}
+@media (min-width: 414px) {
+  .item-1 .qiuqian {
+    margin-top: 8rem !important;
   }
 }
 html,
@@ -12,7 +17,7 @@ body {
 }
 body {
   background: url('/img/01/bg.jpg');
-  background-size: cover;
+  background-size: contain;
   text-align: center;
   background-repeat: no-repeat;
 }
@@ -55,7 +60,7 @@ body {
   display: block;
   margin: auto;
   font-size: 1.1rem;
-  background: red;
+  background: #d30000;
   border: 0;
   border-radius: 20px;
   padding: 0.5rem;
@@ -78,7 +83,7 @@ body {
 }
 .item-2 .bg {
   background: url('/img/01/bg.jpg');
-  background-size: cover;
+  background-size: contain;
   text-align: center;
   background-repeat: no-repeat;
   width: 100%;

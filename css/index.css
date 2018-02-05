@@ -25,9 +25,19 @@
 @media (min-width: 414px) {
   .item-1 .qiuqian {
     margin-top: 8rem !important;
+    height: 18rem !important;
+  }
+  .item-1 .qiuqian input {
+    top: 8.5rem !important;
+  }
+  .item-1 #next {
+    margin-top: 5rem !important;
   }
   .item-2 .marign {
     padding-top: 7rem !important;
+  }
+  .item-2 .qian {
+    height: 12.5rem !important;
   }
   .item-2 .wenzi .t {
     font-size: 1.5rem !important;
@@ -68,7 +78,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: 18rem;
+  height: 16rem;
   width: 80%;
   margin: 6.5rem auto 0 auto;
 }
@@ -85,7 +95,7 @@ body {
   /* margin: 7rem auto 0 auto; */
   margin: auto;
   position: relative;
-  top: 8.5rem;
+  top: 7.5rem;
   text-align: center;
 }
 .item-1 .qiuqian #next {
@@ -97,7 +107,7 @@ body {
   border-radius: 20px;
   padding: 0.5rem;
   width: 40%;
-  margin-top: 5rem;
+  margin-top: 3rem;
   color: yellow;
   position: relative;
   top: 8rem;
@@ -130,7 +140,7 @@ body {
 }
 .item-2 .qian {
   margin-bottom: .5rem;
-  height: 12.5rem;
+  height: 10.5rem;
   background-position: center 0;
 }
 .item-2 .wenzi {

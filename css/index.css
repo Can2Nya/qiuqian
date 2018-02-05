@@ -1,4 +1,10 @@
 @media (max-width: 320px) {
+  .item-1 .qiuqian {
+    height: 15rem !important;
+  }
+  .item-1 .qiuqian input {
+    top: 6.9rem !important;
+  }
   .item-1 #next {
     margin-top: 2rem !important;
   }
@@ -12,7 +18,7 @@
     font-size: .7rem !important;
   }
   .item-2 .qian {
-    height: 10.5rem !important;
+    height: 9.5rem !important;
   }
 }
 @media (min-width: 414px) {

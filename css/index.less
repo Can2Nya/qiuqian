@@ -6,7 +6,7 @@
       }
     }
     &-2{
-      .qian{
+      .marign{
         padding-top: 6rem !important;
       }
       .wenzi{
@@ -16,6 +16,9 @@
         div{
           font-size: .7rem !important;
         }
+      }
+      .qian{
+        height: 10.5rem !important;
       }
     }
   }
@@ -28,7 +31,7 @@
       }
     }
     &-2{
-      .qian{
+      .marign{
         padding-top: 8rem !important;
       }
       .wenzi{
@@ -91,12 +94,19 @@ body{
       margin: 6.5rem auto 0 auto;
       input{
         background: transparent;
-        margin-top: 8.5rem;
+        /* margin-top: 8.5rem; */
         width: 90px;
         font-size: 1.1rem;
         height: 70px;
         border: 0;
         color: red;
+        display: block;
+        box-sizing: border-box;
+        /* margin: 7rem auto 0 auto; */
+        margin: auto;
+        position: relative;
+        top: 8.5rem;
+        text-align: center;
       }
       #next{
         display: block;
@@ -109,6 +119,8 @@ body{
         width: 40%;
         margin-top: 5rem;
         color: yellow;
+        position: relative;
+        top: 8rem;
       }
     }
   }
@@ -129,7 +141,7 @@ body{
     }
     .bg{
       background: url('/img/01/bg.jpg');
-      background-size: cover;
+      background-size: 100% 100%;
       // background-position: center;
       text-align: center;
       background-repeat: no-repeat;
@@ -142,8 +154,10 @@ body{
       // visibility: hidden;
     }
     .qian{
-      padding-top: 7rem;
+      // padding-top: 7rem;
       margin-bottom: .5rem;
+      height: 12.5rem;
+      background-position: center 0;
     }
     .erwei{
       // margin-bottom: .5rem;
@@ -160,7 +174,7 @@ body{
         top: 3.2rem;
       }
       .t{
-        font-size: 1.1rem;
+        font-size: 1.3rem;
       }
     }
     .dixia{

@@ -1,12 +1,13 @@
 @media (max-width: 320px) {
   .item-1 .qiuqian {
     height: 13rem !important;
+    margin-top: 5.5rem;
   }
   .item-1 .qiuqian input {
     top: 5.5rem !important;
   }
   .item-1 #next {
-    margin-top: 2rem !important;
+    margin-top: 0rem !important;
   }
   .item-2 .marign {
     padding-top: 5rem !important;

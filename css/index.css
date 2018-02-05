@@ -1,7 +1,7 @@
 @media (max-width: 320px) {
   .item-1 .qiuqian {
     height: 13rem !important;
-    margin-top: 5.5rem;
+    margin-top: 5.5rem !important;
   }
   .item-1 .qiuqian input {
     top: 5.5rem !important;

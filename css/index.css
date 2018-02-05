@@ -1,9 +1,9 @@
 @media (max-width: 320px) {
   .item-1 .qiuqian {
-    height: 15rem !important;
+    height: 13rem !important;
   }
   .item-1 .qiuqian input {
-    top: 6.9rem !important;
+    top: 5.5rem !important;
   }
   .item-1 #next {
     margin-top: 2rem !important;

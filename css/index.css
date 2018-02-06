@@ -1,50 +1,5 @@
-@media (max-width: 320px) {
-  .item-1 .qiuqian {
-    height: 13rem !important;
-    margin-top: 5.5rem !important;
-  }
-  .item-1 .qiuqian input {
-    top: 5.5rem !important;
-  }
-  .item-1 #next {
-    margin-top: 0rem !important;
-  }
-  .item-2 .marign {
-    padding-top: 5rem !important;
-  }
-  .item-2 .wenzi .t {
-    font-size: 1rem !important;
-  }
-  .item-2 .wenzi div {
-    font-size: .7rem !important;
-  }
-  .item-2 .qian {
-    height: 9.5rem !important;
-  }
-}
-@media (min-width: 414px) {
-  .item-1 .qiuqian {
-    margin-top: 8rem !important;
-    height: 18rem !important;
-  }
-  .item-1 .qiuqian input {
-    top: 8.5rem !important;
-  }
-  .item-1 #next {
-    margin-top: 5rem !important;
-  }
-  .item-2 .marign {
-    padding-top: 7rem !important;
-  }
-  .item-2 .qian {
-    height: 12.5rem !important;
-  }
-  .item-2 .wenzi .t {
-    font-size: 1.5rem !important;
-  }
-  .item-2 .wenzi div {
-    font-size: 1rem !important;
-  }
+* {
+  box-sizing: border-box;
 }
 html,
 body {
@@ -64,73 +19,61 @@ body {
   bottom: 0;
   overflow: hidden;
 }
-.page {
-  box-sizing: border-box;
-}
-.item {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  position: relative;
-}
 .item-1 .qiuqian {
   background: url('../img/01/qiuqian.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: 16rem;
-  width: 80%;
-  margin: 6.5rem auto 0 auto;
+  height: 4.5rem;
+  margin-top: 2rem;
 }
-.item-1 .qiuqian input {
+.item-1 input {
   background: transparent;
-  /* margin-top: 8.5rem; */
-  width: 90px;
-  font-size: 1.1rem;
-  height: 70px;
+  font-size: .4rem;
   border: 0;
   color: red;
   display: block;
-  box-sizing: border-box;
-  /* margin: 7rem auto 0 auto; */
   margin: auto;
   position: relative;
-  top: 7.5rem;
   text-align: center;
+  top: 2.5rem;
 }
-.item-1 .qiuqian #next {
+.item-1 #next {
   display: block;
   margin: auto;
-  font-size: 1.1rem;
+  font-size: .3rem;
   background: #d30000;
   border: 0;
   border-radius: 20px;
-  padding: 0.5rem;
-  width: 40%;
-  margin-top: 3rem;
+  padding: .2rem .3rem;
   color: yellow;
   position: relative;
-  top: 8rem;
+  top: 3.8rem;
 }
-.item-2 div {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background-repeat: no-repeat;
-  background-size: contain;
+.item-2 {
+  text-align: center;
+  position: relative;
+  height: 100%;
 }
 .item-2 > img {
+  width: 100%;
+  height: 100%;
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+}
+.item-2 .marign {
+  padding-top: 2.3rem;
+}
+.item-2 .bg,
+.item-2 .qian {
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .item-2 .bg {
   background: url('/img/01/bg.jpg');
   background-size: 100% 100%;
-  text-align: center;
-  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -139,24 +82,14 @@ body {
   z-index: -1;
 }
 .item-2 .qian {
-  margin-bottom: .5rem;
-  height: 10.5rem;
+  height: 3rem;
+  margin-bottom: .1rem;
   background-position: center 0;
 }
 .item-2 .wenzi {
-  position: relative;
-  top: -45px;
-}
-.item-2 .wenzi div {
-  color: #ff0000;
-  font-size: .9rem;
-  position: relative;
-  top: 3.2rem;
+  color: #d30000;
+  font-size: .3rem;
 }
 .item-2 .wenzi .t {
-  font-size: 1.3rem;
-}
-.item-2 .dixia {
-  position: relative;
-  top: -7rem;
+  font-size: .4rem;
 }

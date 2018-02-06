@@ -73,24 +73,28 @@
               $(this).removeClass($(this).data('animate'));
             });
             var newCanvas = document.createElement("canvas"); //创建一个canvas节点
-            var scale = 3; //定义任意放大倍数 支持小数
-            newCanvas.width = $('#sop').width() * 3; //定义canvas 宽度 * 缩放
-            newCanvas.height = $('#sop').height() * 3; //定义canvas高度 *缩放
-            newCanvas.getContext("2d").scale(3, 3); //获取context,设置scale
+            var scale = 4; //定义任意放大倍数 支持小数
+            newCanvas.width = $('#sop').width() * scale; //定义canvas 宽度 * 缩放
+            newCanvas.height = $('#sop').height() * scale; //定义canvas高度 *缩放
+            newCanvas.getContext("2d").scale(scale, scale); //获取context,设置scale
             html2canvas(document.getElementById('sop'), {
               useCORS: true,
-              scale: 3,
+              scale: scale,
               canvas: newCanvas,
-              height: $('#sop').height(),
-              width: $('#sop').width()
+              // height: $('#sop').height(),
+              // width: $('#sop').width(),
+              // dpi: window.devicePixelRatio,
+              // onrendered: function(canvas) {
+              //   $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
+              // }
             }).then(function(canvas) {
               // var context = canvas.getContext('2d');
-              // 【重要】关闭抗锯齿
+              // // 【重要】关闭抗锯齿
               // context.mozImageSmoothingEnabled = false;
               // context.webkitImageSmoothingEnabled = false;
               // context.msImageSmoothingEnabled = false;
               // context.imageSmoothingEnabled = false;
-              $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width * 3, canvas.height * 3));
+              $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
             });
           }, 1500);
           $.fn.fullpage.stop();

@@ -19,14 +19,16 @@
                 <input type="text" name="name" id="name" placeholder="输入姓名">
                 <button id="next">确认</button>
             </div>
+            <div class="miaoshu js-animate animated" data-animate="Up">
+                <img src="/img/01/wenzi.png" class="" alt="" width="100%">
+            </div>
           </div>
       </div>
       <div class="page page-2" id="sop">
         <div class="item item-2 js-animate animated" data-animate="">
-          
           <div class="marign"></div>
-          <div class="qian js-animate animated" data-animate="" style="background-image: url('/img/qian/1.png')">
-            <!-- <img src="" width="40%" alt=""> -->
+          <div class="qian js-animate animated" data-animate="">
+            <img id="drow" src="/img/qian/1.png" alt="">
           </div>
           <div class="erwei js-animate animated" data-animate="">
             <img src="/img/02/erweima.png" width="18%" alt="" class="">
@@ -36,18 +38,17 @@
             <div>识别图中二维码获得新年签</div>
             <!-- <img src="/img/02/wenzi.png" alt="" width="70%" class=""> -->
           </div>
+          <div class="miaoshu js-animate animated" data-animate="Up">
+              <img src="/img/01/wenzi.png" class="" alt="" width="100%">
+          </div>
           <div class="bg js-animate animated" data-animate="fadeIn" style="display: none;"></div>
-          <!-- <div class="dixia js-animate animated" data-animate="Up">
-              <img src="/img/02/dixia.png" class="" alt="" width="100%">
-          </div> -->
-          
         </div>
       </div>
     </div>
   </div>
   <script src="/js/zepto.min.js"></script>
   <script src="/js/zepto.fullpage.js"></script>
-  <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
   <script src="/js/html2canvas.min.js"></script>
   <script src="/js/canvas2image.js"></script>
   <script src="/js/index.js"></script>
@@ -79,7 +80,7 @@
             newCanvas.getContext("2d").scale(scale, scale); //获取context,设置scale
             html2canvas(document.getElementById('sop'), {
               useCORS: true,
-              scale: scale,
+              // scale: scale,
               canvas: newCanvas,
               // height: $('#sop').height(),
               // width: $('#sop').width(),
@@ -94,9 +95,10 @@
               // context.webkitImageSmoothingEnabled = false;
               // context.msImageSmoothingEnabled = false;
               // context.imageSmoothingEnabled = false;
-              $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
+              $('.item-2').append(Canvas2Image.convertToBMP(canvas, canvas.width, canvas.height));
+              // $('.item-2').append(canvas);
             });
-          }, 1500);
+          }, 1000);
           $.fn.fullpage.stop();
         };
 

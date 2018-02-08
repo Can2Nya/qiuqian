@@ -117,7 +117,8 @@
 })(window, window['lib'] || (window['lib'] = {}));
 
 var num = Math.floor(Math.random() * 12);
-$('.item-2 .qian').css('background-image', 'url(/img/qian/'+ num +'.png)');
+// 
+// $('#drow').attr('src', '/img/qian/'+ num +'.png');
 $('#next').on('click', function() {
   if($('#name').val() == ''){
     alert('请输入姓名');

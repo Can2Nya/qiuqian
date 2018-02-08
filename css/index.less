@@ -6,7 +6,7 @@ html, body{
 }
 
 body{
-  background: url('/img/01/bg.jpg');
+  background: url('/img/01/bg1.jpg');
   background-size: 100% 100%;
   // background-position: center;
   text-align: center;
@@ -32,6 +32,10 @@ body{
 }
 
 .item{
+  .miaoshu{
+    width: 78%;
+    margin: .1rem auto 0 auto;
+  }
   &-1{
     .qiuqian{
       background: url('../img/01/qiuqian.png');
@@ -40,10 +44,11 @@ body{
       background-position: center;
       height: 4.5rem;
       margin-top: 2rem;
+      margin-bottom: 1rem;
     }
     input{
       background: transparent;
-      font-size: .4rem;
+      font-size: .3rem;
       border: 0;
       color: red;
       display: block;
@@ -78,15 +83,23 @@ body{
       top: 0;
       left: 0;
     }
+    &>canvas{
+      width: 100%;
+      height: 100%;
+      // display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
     .marign{
-      padding-top: 2.3rem;
+      padding-top: 1.9rem;
     }
     .bg, .qian{
       background-size: contain;
       background-repeat: no-repeat;
     }
     .bg{
-      background: url('/img/01/bg.jpg');
+      background: url('/img/01/bg1.jpg');
       background-size: 100% 100%;
       width: 100%;
       height: 100%;
@@ -96,12 +109,19 @@ body{
       z-index: -1;
     }
     .qian{
-      height: 3rem;
+      // height: 3rem;
       margin-bottom: .1rem;
-      background-position: center 0;
+      // background-position: center 0;
+      text-align: center;
+      // background: url('/img/qian/1.jpg');
+      img{
+        width: 49%;
+        // display: block;
+        // margin: auto;
+      }
     }
     .wenzi{
-      color: #d30000;
+      color: #e93f37;
       font-size: .3rem;
       .t{
         font-size: .4rem;

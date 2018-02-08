@@ -50,5 +50,9 @@ function getMIME(extname) {
       case ".css":
           return "text/css";
           break;
+      case ".js":
+          return "application/x-javascript";
+          break;
       }
+      
 }

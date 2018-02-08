@@ -15,7 +15,7 @@ http.createServer(function(req, res) {
     // console.log(extname);
     //真的读取这个文件
     //缺点，太智能，但是不能检测是什么类型的文件
-    fs.readFile("./static/" + pathname, function(err, data) {
+    fs.readFile("./" + pathname, function(err, data) {
         //data是一个Buffer，二进制的数据流
         if(err) {
             //如果文件不存在，就返回404

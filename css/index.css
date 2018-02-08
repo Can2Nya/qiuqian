@@ -19,9 +19,17 @@ body {
   bottom: 0;
   overflow: hidden;
 }
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 .item .miaoshu {
-  width: 78%;
   margin: .1rem auto 0 auto;
+}
+.item .miaoshu img {
+  height: 1.8rem;
 }
 .item-1 .qiuqian {
   background: url('../img/01/qiuqian.png');
@@ -29,7 +37,6 @@ body {
   background-size: contain;
   background-position: center;
   height: 4.5rem;
-  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 .item-1 input {
@@ -58,7 +65,6 @@ body {
 .item-2 {
   text-align: center;
   position: relative;
-  height: 100%;
 }
 .item-2 > img {
   width: 100%;

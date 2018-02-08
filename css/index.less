@@ -32,18 +32,26 @@ body{
 }
 
 .item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   .miaoshu{
-    width: 78%;
+    // height: 2rem;
     margin: .1rem auto 0 auto;
+    img{
+      height: 1.8rem;
+    }
   }
   &-1{
+    
     .qiuqian{
       background: url('../img/01/qiuqian.png');
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
       height: 4.5rem;
-      margin-top: 2rem;
+      // margin-top: 2rem;
       margin-bottom: 1rem;
     }
     input{
@@ -74,7 +82,8 @@ body{
   &-2{
     text-align: center;
     position: relative;
-    height: 100%;
+    
+    
     &>img{
       width: 100%;
       height: 100%;
@@ -93,6 +102,9 @@ body{
     }
     .marign{
       padding-top: 1.9rem;
+    }
+    .flex{
+      
     }
     .bg, .qian{
       background-size: contain;

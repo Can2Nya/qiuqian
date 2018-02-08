@@ -1,37 +1,52 @@
-let http = require("http"),
-    url = require("url"),
-    path = require("path"),
-    fs = require("fs");
+//因为Node路由路径和实际文件路径并不一定一致，没有Web容器的原因，这里我们仿照Web路由的实现
+var http = require("http");
+var url = require("url");
+var fs = require("fs");
+var path = require("path");
 
-let staticPath = "./";
-
-let app = http.createServer((request, response) => {
-    let pathName = url.parse(request.url).pathname,
-        realPath = path.join(staticPath, pathName); // 请求文件的在磁盘中的真实地址
-
-    fs.exists(realPath, (exists) => {
-        if(!exists) {
-            // 当文件不存在时
-            response.writeHead(404, {"Content-Type": "text/plain"});
-            response.write("This request URL ' " + realPath + " ' was not found on this server.");
-            response.end();
-        } else {
-            // 当文件存在时
-            fs.readFile(realPath, "binary", (err, file) => {
-                if (err) {
-                    // 文件读取出错
-                    response.writeHead(500, {"Content-Type": "text/plain"});
-
-                    response.end(err);
-                } else {
-                    // 当文件可被读取时，输出文本流
-                    response.writeHead(200);
-                    response.write(file, "binary");
-                    response.end();
-                }
+http.createServer(function(req, res) {
+    //得到用户的路径
+    var pathname = url.parse(req.url).pathname;
+    if(pathname == "/") {
+        pathname = "index.html";
+    }
+    //拓展名
+    var extname = path.extname(pathname);
+    // console.log(extname);
+    //真的读取这个文件
+    //缺点，太智能，但是不能检测是什么类型的文件
+    fs.readFile("./static/" + pathname, function(err, data) {
+        //data是一个Buffer，二进制的数据流
+        if(err) {
+            //如果文件不存在，就返回404
+            fs.readFile("./static/404.html", function(err, data) {
+                res.writeHead(404,{"Content-type":"text/html;chaset=UTF8"});
+                res.end(data);
             });
+            return ;//必须这个，不然会走到下个data
         }
-    });
-});
-app.listen(80, "0.0.0.0");
-console.log('listen 80');
+        //MIME类型，就是
+        //网页文件：text/html
+        //jpg文件：image/jpg
+        var  mime = getMIME(extname)
+        res.writeHead(200,{"Content-type":mime});
+        res.end(data);
+    })
+}).listen(80, "0.0.0.0");
+
+function getMIME(extname) {
+  switch (extname) {
+      case ".html":
+          return "text/html";
+          break;
+      case ".jpg":
+          return "image/jpg";
+          break;
+      case ".png":
+          return "image/png";
+          break;
+      case ".css":
+          return "text/css";
+          break;
+      }
+}

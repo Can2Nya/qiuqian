@@ -4,6 +4,8 @@ var url = require("url");
 var fs = require("fs");
 var path = require("path");
 
+try{
+
 http.createServer(function(req, res) {
     //得到用户的路径
     var pathname = url.parse(req.url).pathname;
@@ -96,3 +98,6 @@ const refreshToken = function () {
     saveToken();
   }, 7000*1000);
 };
+}catch(e){
+  console.log(e);
+}

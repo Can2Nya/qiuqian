@@ -92,7 +92,7 @@ const saveToken = function () {
   getAccessToken().then(res => {
     let token = res['access_token'];
     fs.writeFile('./token', token, function (err) {
-      
+      console.log('accessToken 保存成功')
     });
   })
 };
@@ -106,3 +106,5 @@ const refreshToken = function () {
 }catch(e){
   console.log(e);
 }
+
+refreshToken();

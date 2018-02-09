@@ -18,6 +18,7 @@ const getAccessToken = function () {
   };
 
   let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+ queryParams.appid +'&secret=' + queryParams.appSecret;
+  console.log(wxGetAccessTokenBaseUrl);
   let options = {
     method: 'GET',
     url: wxGetAccessTokenBaseUrl

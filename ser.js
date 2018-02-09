@@ -102,9 +102,10 @@ const refreshToken = function () {
   setInterval(function () {
     saveToken();
   }, 7000*1000);
+
+  refreshToken();
 };
 }catch(e){
   console.log(e);
 }
 
-refreshToken();

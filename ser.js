@@ -59,6 +59,11 @@ function getMIME(extname) {
       
 }
 
+var config = {
+  appId: 'wx6f9f274581430c76',
+  appSecret: '7fd47bdc3802e189c7bf01de84eed040',
+}
+
 const getAccessToken = function () {
   let queryParams = {
     'grant_type': 'client_credential',

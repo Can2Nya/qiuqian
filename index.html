@@ -116,11 +116,12 @@
   });
   $.fn.fullpage.stop();
   $.ajax({
-    url: '/token.txt',
+    url: '/ticket.txt',
     success: function(data){
       shareData = {
         appId: 'wx6f9f274581430c76',
-        accessToken: data,
+        // accessToken: data,
+        ticket: data,
         title: '标题',
         desc: '简介',
         link: location.href,

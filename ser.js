@@ -20,7 +20,6 @@ const getAccessToken = function () {
   };
 
   let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+ queryParams.appid +'&secret=' + queryParams.secret;
-  console.log(wxGetAccessTokenBaseUrl);
   let options = {
     method: 'GET',
     url: wxGetAccessTokenBaseUrl
@@ -37,14 +36,8 @@ const getAccessToken = function () {
   })
 };
 
-const getgetTicket = function () {
-  let queryParams = {
-    'grant_type': 'client_credential',
-    'appid': config.appId,
-    'secret': config.appSecret
-  };
-
-  let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+ queryParams.appid +'&secret=' + queryParams.secret;
+const getTicket = function () {
+  let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ _token +'&type=jsapi';
   console.log(wxGetAccessTokenBaseUrl);
   let options = {
     method: 'GET',
@@ -70,7 +63,14 @@ const saveToken = function () {
       _token = token;
       console.log('accessToken 保存成功');
     });
+    getTicket().then(res => {
+      let token = res['ticket'];
+      fs.writeFile('./ticket.txt', token, function (err) {
+        console.log('ticket 保存成功');
+      });
+    })
   })
+  
 };
 
 const refreshToken = function () {

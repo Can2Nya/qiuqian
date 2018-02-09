@@ -44,6 +44,7 @@ $(function () {
                  "expires_in":7200
                  }
                  */
+                console.log(response)
                 var signature = getSignature(response.ticket);
                 if (callback) {
                     callback(signature);

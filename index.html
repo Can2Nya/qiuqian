@@ -123,8 +123,8 @@
         accessToken: data,
         title: '标题',
         desc: '简介',
-        link: '分享的链接。一般可以用location.href',
-        imgUrl: '分享的图片链接地址(图片一定要是网络图片地址哦，这样才能保证别人看到的图片是正常显示的)'
+        link: location.href,
+        imgUrl: ''
       };
       $.fn.wx.wechatShare(shareData);
     },

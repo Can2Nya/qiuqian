@@ -4,7 +4,60 @@ var url = require("url");
 var fs = require("fs");
 var path = require("path");
 
-try{
+var config = {
+  appId: 'wx6f9f274581430c76',
+  appSecret: '7fd47bdc3802e189c7bf01de84eed040',
+}
+
+const getAccessToken = function () {
+  let queryParams = {
+    'grant_type': 'client_credential',
+    'appid': config.appId,
+    'secret': config.appSecret
+  };
+
+  let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/token?'+qs.stringify(queryParams);
+  let options = {
+    method: 'GET',
+    url: wxGetAccessTokenBaseUrl
+  };
+  return new Promise((resolve, reject) => {
+    request(options, function (err, res, body) {
+      if (res) {
+        resolve(JSON.parse(body));
+      } else {
+        reject(err);
+      }
+    });
+  })
+};
+
+//保存与更新
+const saveToken = function () {
+  getAccessToken().then(res => {
+    let token = res['access_token'];
+    fs.writeFile('./token', token, function (err) {
+      console.log('accessToken 保存成功');
+    });
+  })
+};
+
+const refreshToken = function () {
+  saveToken();
+  setInterval(function () {
+    saveToken();
+  }, 7000*1000);
+}
+function start(){
+  console.log('获取token中')
+  try{
+    refreshToken();
+  }catch(e){
+    console.log(e);
+  }
+}
+
+start();
 
 http.createServer(function(req, res) {
     //得到用户的路径
@@ -58,54 +111,3 @@ function getMIME(extname) {
       }
       
 }
-
-var config = {
-  appId: 'wx6f9f274581430c76',
-  appSecret: '7fd47bdc3802e189c7bf01de84eed040',
-}
-
-const getAccessToken = function () {
-  let queryParams = {
-    'grant_type': 'client_credential',
-    'appid': config.appId,
-    'secret': config.appSecret
-  };
-
-  let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/token?'+qs.stringify(queryParams);
-  let options = {
-    method: 'GET',
-    url: wxGetAccessTokenBaseUrl
-  };
-  return new Promise((resolve, reject) => {
-    request(options, function (err, res, body) {
-      if (res) {
-        resolve(JSON.parse(body));
-      } else {
-        reject(err);
-      }
-    });
-  })
-};
-
-//保存与更新
-const saveToken = function () {
-  getAccessToken().then(res => {
-    let token = res['access_token'];
-    fs.writeFile('./token', token, function (err) {
-      console.log('accessToken 保存成功')
-    });
-  })
-};
-
-const refreshToken = function () {
-  saveToken();
-  setInterval(function () {
-    saveToken();
-  }, 7000*1000);
-
-  refreshToken();
-};
-}catch(e){
-  console.log(e);
-}
-

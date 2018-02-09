@@ -36,8 +36,8 @@ const getAccessToken = function () {
   })
 };
 
-const getTicket = function () {
-  let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ _token +'&type=jsapi';
+const getTicket = function (a_token) {
+  let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ a_token +'&type=jsapi';
   console.log(wxGetAccessTokenBaseUrl);
   let options = {
     method: 'GET',
@@ -60,10 +60,10 @@ const saveToken = function () {
   getAccessToken().then(res => {
     let token = res['access_token'];
     fs.writeFile('./token.txt', token, function (err) {
-      _token = token;
+      // _token = token;
       console.log('accessToken 保存成功');
     });
-    getTicket().then(res => {
+    getTicket(token).then(res => {
       let token = res['ticket'];
       fs.writeFile('./ticket.txt', token, function (err) {
         console.log('ticket 保存成功');

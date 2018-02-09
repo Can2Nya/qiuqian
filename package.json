@@ -1,0 +1,22 @@
+{
+  "name": "qiuqian",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Can2Nya/qiuqian.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Can2Nya/qiuqian/issues"
+  },
+  "homepage": "https://github.com/Can2Nya/qiuqian#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}

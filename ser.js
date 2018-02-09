@@ -3,6 +3,7 @@ var http = require("http");
 var url = require("url");
 var fs = require("fs");
 var path = require("path");
+var request = require("request");
 
 var config = {
   appId: 'wx6f9f274581430c76',

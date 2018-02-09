@@ -55,10 +55,10 @@ $(function () {
     //sha1 生成签名
     function getSignature($ticket) {
         $str = 'jsapi_ticket=' + $ticket + '&noncestr=' + $random_str + '&timestamp=' + $timestamp + '&url=' + location.href;
-        return $.sha1($str);
+        return $.fn.sha.sha1($str);
     }
 
-    $.extend({
+    $.fn.wx = {
         wechatConfig: function (config) {
             wx.config({
                 debug: false,
@@ -92,21 +92,21 @@ $(function () {
             var signature = config.signature;
 
             if (signature) {
-                $.wechatConfig(config);
+                $.fn.wx.wechatConfig(config);
             }
             else if (ticket) {
                 config.signature = getSignature(ticket);
-                $.wechatConfig(config)
+                $.fn.wx.wechatConfig(config)
             } else if (accessToken) {
                 getTicket(accessToken, function (signature) {
                     config.signature = signature;
-                    $.wechatConfig(config)
+                    $.fn.wx.wechatConfig(config)
                 })
             } else if (appSecret) {
                 getAccessToken(appId, appSecret, function (access_token) {
                     getTicket(access_token, function (signature) {
                         config.signature = signature;
-                        $.wechatConfig(config)
+                        $.fn.wx.wechatConfig(config)
                     })
                 })
             }
@@ -120,5 +120,5 @@ $(function () {
 
         }
 
-    });
+    };
 })

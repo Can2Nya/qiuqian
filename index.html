@@ -56,8 +56,8 @@
   <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
   <script src="/js/html2canvas.min.js"></script>
   <script src="/js/canvas2image.js"></script>
-  <script src="/js/jquery.sha1.js"></script>
-  <script src="/js/jquery.wechat.share.js"></script>
+  <script src="/js/zepto.sha1.js"></script>
+  <script src="/js/zepto.wechat.share.js"></script>
   <script src="/js/index.js"></script>
   <script>
     $('.wp-inner').fullpage({
@@ -115,6 +115,24 @@
     }
   });
   $.fn.fullpage.stop();
+  $.ajax({
+    url: '/token.txt',
+    success: function(data){
+      shareData = {
+        appId: 'wx6f9f274581430c76',
+        accessToken: data,
+        title: '标题',
+        desc: '简介',
+        link: '分享的链接。一般可以用location.href',
+        imgUrl: '分享的图片链接地址(图片一定要是网络图片地址哦，这样才能保证别人看到的图片是正常显示的)'
+      };
+      $.fn.wx.wechatShare(shareData);
+    },
+    error: function(data){
+      alert('城市获取失败，请重试');
+    }
+  })
+  
   </script>
 </body>
 </html>

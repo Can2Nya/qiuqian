@@ -127,5 +127,5 @@ $('#next').on('click', function() {
   $('.t span').text($('#name').val());
   
   
-  $.fn.fullpage.moveNext(true);
+  $.fn.fullpage.moveNext();
 })

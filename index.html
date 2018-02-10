@@ -48,7 +48,7 @@
                     <img src="/img/01/wenzi.png" class="" alt="">
                 </div>
           </div>
-          <div class="bg js-animate animated" data-animate="fadeIn" style="display: none;"></div>
+          <div class="bg js-animate animated" data-animate="fadeIn"></div>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
   <script src="/js/index.js"></script>
   <script>
     $('.wp-inner').fullpage({
-      duration: 100,
+      duration: 0,
       dir: 'h',
       change: function (e) {
         // 移除动画属性
@@ -71,14 +71,15 @@
       },
       afterChange: function (e) {
         // 添加动画属性
-        setTimeout(function() {
-          $('.page').eq(e.cur).find('.js-animate').each(function() {
-            $(this).addClass($(this).data('animate')).show();
-          });
-        }, 300);
+        // setTimeout(function() {
+          
+        // }, 300);
         
         if(e.cur == 1) {
-          setTimeout(function(){
+          // setTimeout(function(){
+            $('.page').eq(e.cur).find('.js-animate').each(function() {
+            $(this).addClass($(this).data('animate')).show();
+          });
             $('.page').eq(e.cur).find('.js-animate').each(function () {
               $(this).removeClass($(this).data('animate'));
             });
@@ -107,8 +108,8 @@
               $('.item-2').append(Canvas2Image.convertToBMP(canvas, canvas.width, canvas.height));
               // $('.item-2').append(canvas);
             });
-          }, 800);
-          $.fn.fullpage.stop();
+          // }, 800);
+          // $.fn.fullpage.stop();
         };
 
       // if(e.cur == 8) $.fn.fullpage.start();

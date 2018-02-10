@@ -108,16 +108,8 @@ body {
 .item-2 .wenzi {
   color: #e93f37;
   font-size: .2rem;
-  width: 70%;
+  text-align: center;
 }
 .item-2 .wenzi .t {
   font-size: .4rem;
-}
-.item-2 .wenzi div {
-  text-align: justify;
-}
-.item-2 .wenzi div::after {
-  content: " ";
-  display: inline-block;
-  width: 100%;
 }

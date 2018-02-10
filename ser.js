@@ -38,7 +38,6 @@ const getAccessToken = function () {
 
 const getTicket = function (a_token) {
   let wxGetAccessTokenBaseUrl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ a_token +'&type=jsapi';
-  console.log(wxGetAccessTokenBaseUrl);
   let options = {
     method: 'GET',
     url: wxGetAccessTokenBaseUrl

@@ -108,12 +108,14 @@ body {
 .item-2 .wenzi {
   color: #e93f37;
   font-size: .2rem;
-  text-align: justify;
 }
 .item-2 .wenzi .t {
   font-size: .3rem;
 }
-.item-2 .wenzi::after {
+.item-2 .wenzi div {
+  text-align: justify;
+}
+.item-2 .wenzi div::after {
   content: " ";
   display: inline-block;
   width: 100%;

@@ -41,6 +41,10 @@ body {
   padding: .2rem .3rem;
   color: yellow;
 }
+.item .flex {
+  display: flex;
+  flex-direction: column;
+}
 .item-1 .qiuqian {
   background: url('../img/01/qiuqian.png');
   background-repeat: no-repeat;

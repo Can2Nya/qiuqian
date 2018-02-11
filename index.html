@@ -13,14 +13,14 @@
   <div class="wp">
     <div class="wp-inner" >
       <div class="page page-1">
-          <div class="item item-1 js-animate animated" data-animate="">
+          <div class="item item-1 js-animate " data-animate="">
             <div>
                 <div class="qiuqian">
-                    <!-- <img src="/img/01/qiuqian.png" alt="" width="50%" class="js-animate animated" data-animate=""> -->
+                    <!-- <img src="/img/01/qiuqian.png" alt="" width="50%" class="js-animate " data-animate=""> -->
                     <input type="text" name="name" id="name" placeholder="输入姓名">
                     <button id="next">确认</button>
                 </div>
-                <div class="miaoshu js-animate animated" data-animate="Up">
+                <div class="miaoshu js-animate " data-animate="Up">
                     <img src="/img/01/wenzi.png" class="" alt="">
                 </div>
             </div>
@@ -28,27 +28,32 @@
           </div>
       </div>
       <div class="page page-2" id="sop">
-        <div class="item item-2 js-animate animated" data-animate="">
+        <div class="item item-2 js-animate " data-animate="">
           <!-- <div class="marign"></div> -->
           <div class="flex">
-              <div class="qian js-animate animated" data-animate="">
+              <div class="qian js-animate " data-animate="">
                   <img id="drow" src="/img/qian/1.png" alt="">
                 </div>
-                <div class="erwei js-animate animated" data-animate="">
+                <div class="erwei js-animate " data-animate="">
                   <img src="/img/02/erweim.png" width="18%" alt="" class="">
                 </div>
-                <div class="wenzi js-animate animated" data-animate="">
+                <div class="wenzi js-animate " data-animate="">
                   <div class="t">这是<span>xxx</span>的新年签</div>
-                  <div>长按识别图中二维码获得新年签<br>
-                    长&nbsp;按&nbsp;二&nbsp;维&nbsp;码&nbsp;保&nbsp;存&nbsp;图&nbsp;片
+                  <div>长按识别图中二维码获得新年签
+                    <!-- 长&nbsp;按&nbsp;二&nbsp;维&nbsp;码&nbsp;保&nbsp;存&nbsp;图&nbsp;片 -->
                   </div>
                   <!-- <img src="/img/02/wenzi.png" alt="" width="70%" class=""> -->
                 </div>
-                <div class="miaoshu js-animate animated" data-animate="Up">
+                <div class="miaoshu js-animate " data-animate="Up">
                     <img src="/img/01/wenzi.png" class="" alt="">
                 </div>
+                <button id="save">保存为截图</button>
           </div>
-          <div class="bg js-animate animated" data-animate="fadeIn"></div>
+          <div class="bg js-animate " data-animate="fadeIn"></div>
+          <div class="savepage" style="display: none;">
+            <span></span>
+              <div>长&nbsp;按&nbsp;二&nbsp;维&nbsp;码&nbsp;保&nbsp;存&nbsp;图&nbsp;片</div>
+          </div>
         </div>
       </div>
     </div>
@@ -75,42 +80,42 @@
           
         // }, 300);
         
-        if(e.cur == 1) {
-          setTimeout(function(){
-          //   $('.page').eq(e.cur).find('.js-animate').each(function() {
-          //   $(this).addClass($(this).data('animate')).show();
-          // });
-            $('.page').eq(e.cur).find('.js-animate').each(function () {
-              $(this).removeClass($(this).data('animate'));
-            });
-            var newCanvas = document.createElement("canvas"); //创建一个canvas节点
-            var scale = 1; //定义任意放大倍数 支持小数
-            newCanvas.width = $('#sop').width() * scale; //定义canvas 宽度 * 缩放
-            newCanvas.height = $('#sop').height() * scale; //定义canvas高度 *缩放
-            newCanvas.getContext("2d").scale(scale, scale); //获取context,设置scale
-            html2canvas(document.getElementById('sop'), {
-              useCORS: true,
-              // scale: scale,
-              canvas: newCanvas,
-              // height: $('#sop').height(),
-              // width: $('#sop').width(),
-              // dpi: window.devicePixelRatio,
-              // onrendered: function(canvas) {
-              //   $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
-              // }
-            }).then(function(canvas) {
-              // var context = canvas.getContext('2d');
-              // // 【重要】关闭抗锯齿
-              // context.mozImageSmoothingEnabled = false;
-              // context.webkitImageSmoothingEnabled = false;
-              // context.msImageSmoothingEnabled = false;
-              // context.imageSmoothingEnabled = false;
-              $('.item-2').append(Canvas2Image.convertToBMP(canvas, canvas.width, canvas.height));
-              // $('.item-2').append(canvas);
-            });
-          }, 100);
+        // if(e.cur == 1) {
+        //   setTimeout(function(){
+        //   //   $('.page').eq(e.cur).find('.js-animate').each(function() {
+        //   //   $(this).addClass($(this).data('animate')).show();
+        //   // });
+        //     // $('.page').eq(e.cur).find('.js-animate').each(function () {
+        //     //   $(this).removeClass($(this).data('animate'));
+        //     // });
+        //     var newCanvas = document.createElement("canvas"); //创建一个canvas节点
+        //     var scale = 1; //定义任意放大倍数 支持小数
+        //     newCanvas.width = $('#sop').width() * scale; //定义canvas 宽度 * 缩放
+        //     newCanvas.height = $('#sop').height() * scale; //定义canvas高度 *缩放
+        //     newCanvas.getContext("2d").scale(scale, scale); //获取context,设置scale
+        //     html2canvas(document.getElementById('sop'), {
+        //       useCORS: true,
+        //       // scale: scale,
+        //       canvas: newCanvas,
+        //       // height: $('#sop').height(),
+        //       // width: $('#sop').width(),
+        //       // dpi: window.devicePixelRatio,
+        //       // onrendered: function(canvas) {
+        //       //   $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
+        //       // }
+        //     }).then(function(canvas) {
+        //       // var context = canvas.getContext('2d');
+        //       // // 【重要】关闭抗锯齿
+        //       // context.mozImageSmoothingEnabled = false;
+        //       // context.webkitImageSmoothingEnabled = false;
+        //       // context.msImageSmoothingEnabled = false;
+        //       // context.imageSmoothingEnabled = false;
+        //       $('.item-2').append(Canvas2Image.convertToBMP(canvas, canvas.width, canvas.height));
+        //       // $('.item-2').append(canvas);
+        //     });
+        //   }, 100);
           // $.fn.fullpage.stop();
-        };
+        // };
 
       // if(e.cur == 8) $.fn.fullpage.start();
       // // 最后一页不动
@@ -136,6 +141,41 @@
       alert('获取失败，请重试');
     }
   });
+  $("#save").on("click", function() {
+    // 隐藏
+
+    $("#save").hide();
+
+    // 生成
+
+    var newCanvas = document.createElement("canvas"); //创建一个canvas节点
+    var scale = 1; //定义任意放大倍数 支持小数
+    newCanvas.width = $('#sop').width() * scale; //定义canvas 宽度 * 缩放
+    newCanvas.height = $('#sop').height() * scale; //定义canvas高度 *缩放
+    newCanvas.getContext("2d").scale(scale, scale); //获取context,设置scale
+    html2canvas(document.getElementById('sop'), {
+      useCORS: true,
+      // scale: scale,
+      canvas: newCanvas,
+      // height: $('#sop').height(),
+      // width: $('#sop').width(),
+      // dpi: window.devicePixelRatio,
+      // onrendered: function(canvas) {
+      //   $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
+      // }
+    }).then(function(canvas) {
+      // var context = canvas.getContext('2d');
+      // // 【重要】关闭抗锯齿
+      // context.mozImageSmoothingEnabled = false;
+      // context.webkitImageSmoothingEnabled = false;
+      // context.msImageSmoothingEnabled = false;
+      // context.imageSmoothingEnabled = false;
+      $('.savepage span').append(Canvas2Image.convertToBMP(canvas, canvas.width, canvas.height));
+      $('.savepage').show();
+      // $('.item-2').append(canvas);
+    });
+          
+  })
   
   </script>
 </body>

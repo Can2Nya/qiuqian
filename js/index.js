@@ -116,7 +116,7 @@
 
 })(window, window['lib'] || (window['lib'] = {}));
 
-var num = Math.floor(Math.random() * 12);
+var num = Math.floor(Math.random() * 11);
 // $('.item-2 .qian').css('background-image', 'url(/img/qian/'+ num +'.png)');
 $('#drow').attr('src', '/img/qian/'+ num +'.png');
 $('#next').on('click', function() {

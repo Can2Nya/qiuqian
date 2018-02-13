@@ -1,6 +1,7 @@
-var bgAudio = new Audio();
+    
+    var bgAudio = new Audio();
     bgAudio.loadStatus = 'unload';
-    // bgAudio.loop = true; 
+    bgAudio.loop = true; 
     function loadAudio(audio, url, callback) {
         audio.src = url;
         audio.load();
@@ -12,9 +13,9 @@ var bgAudio = new Audio();
             bgAudio.loadStatus = 'loading';
         });
     }
-    function playAudio(){
+    function playAudio(mp3url){
         if (bgAudio.loadStatus === 'unload') {
-            loadAudio(bgAudio, '/7533.mp3', function () {
+            loadAudio(bgAudio, mp3url, function () {
                 playAudio();
             });
             return 1;

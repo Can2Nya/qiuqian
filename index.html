@@ -71,7 +71,7 @@
   </div>
   <script src="/js/zepto.min.js"></script>
   <script src="/js/zepto.fullpage.js"></script>
-  <script src="/js/mp3.js"></script>
+  <!-- <script src="/js/mp3.js"></script> -->
   <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
   <script src="/js/html2canvas.min.js"></script>
   <script src="/js/canvas2image.js"></script>
@@ -92,42 +92,42 @@
           
         // }, 300);
         
-        // if(e.cur == 1) {
-        //   setTimeout(function(){
-        //   //   $('.page').eq(e.cur).find('.js-animate').each(function() {
-        //   //   $(this).addClass($(this).data('animate')).show();
-        //   // });
-        //     // $('.page').eq(e.cur).find('.js-animate').each(function () {
-        //     //   $(this).removeClass($(this).data('animate'));
-        //     // });
-        //     var newCanvas = document.createElement("canvas"); //创建一个canvas节点
-        //     var scale = 1; //定义任意放大倍数 支持小数
-        //     newCanvas.width = $('#sop').width() * scale; //定义canvas 宽度 * 缩放
-        //     newCanvas.height = $('#sop').height() * scale; //定义canvas高度 *缩放
-        //     newCanvas.getContext("2d").scale(scale, scale); //获取context,设置scale
-        //     html2canvas(document.getElementById('sop'), {
-        //       useCORS: true,
-        //       // scale: scale,
-        //       canvas: newCanvas,
-        //       // height: $('#sop').height(),
-        //       // width: $('#sop').width(),
-        //       // dpi: window.devicePixelRatio,
-        //       // onrendered: function(canvas) {
-        //       //   $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
-        //       // }
-        //     }).then(function(canvas) {
-        //       // var context = canvas.getContext('2d');
-        //       // // 【重要】关闭抗锯齿
-        //       // context.mozImageSmoothingEnabled = false;
-        //       // context.webkitImageSmoothingEnabled = false;
-        //       // context.msImageSmoothingEnabled = false;
-        //       // context.imageSmoothingEnabled = false;
-        //       $('.item-2').append(Canvas2Image.convertToBMP(canvas, canvas.width, canvas.height));
-        //       // $('.item-2').append(canvas);
-        //     });
-        //   }, 100);
-          // $.fn.fullpage.stop();
-        // };
+        if(e.cur == 1) {
+          setTimeout(function(){
+          //   $('.page').eq(e.cur).find('.js-animate').each(function() {
+          //   $(this).addClass($(this).data('animate')).show();
+          // });
+            // $('.page').eq(e.cur).find('.js-animate').each(function () {
+            //   $(this).removeClass($(this).data('animate'));
+            // });
+            var newCanvas = document.createElement("canvas"); //创建一个canvas节点
+            var scale = 1; //定义任意放大倍数 支持小数
+            newCanvas.width = $('#sop').width() * scale; //定义canvas 宽度 * 缩放
+            newCanvas.height = $('#sop').height() * scale; //定义canvas高度 *缩放
+            newCanvas.getContext("2d").scale(scale, scale); //获取context,设置scale
+            html2canvas(document.getElementById('sop'), {
+              useCORS: true,
+              // scale: scale,
+              canvas: newCanvas,
+              // height: $('#sop').height(),
+              // width: $('#sop').width(),
+              // dpi: window.devicePixelRatio,
+              // onrendered: function(canvas) {
+              //   $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
+              // }
+            }).then(function(canvas) {
+              // var context = canvas.getContext('2d');
+              // // 【重要】关闭抗锯齿
+              // context.mozImageSmoothingEnabled = false;
+              // context.webkitImageSmoothingEnabled = false;
+              // context.msImageSmoothingEnabled = false;
+              // context.imageSmoothingEnabled = false;
+              $('.item-2').append(Canvas2Image.convertToBMP(canvas, canvas.width, canvas.height));
+              // $('.item-2').append(canvas);
+            });
+          }, 300);
+          $.fn.fullpage.stop();
+        };
 
       // if(e.cur == 8) $.fn.fullpage.start();
       // // 最后一页不动
@@ -153,45 +153,45 @@
       alert('获取失败，请重试');
     }
   });
-  $("#save").on("click", function() {
-    // 隐藏
+  // $("#save").on("click", function() {
+  //   // 隐藏
 
-    // 播放音乐
-    playAudio();
+  //   // 播放音乐
+  //   // playAudio();
 
-    $("#save").css('visibility', 'hidden');
-    $('.load').show();
-    // 生成
+  //   $("#save").css('visibility', 'hidden');
+  //   $('.load').show();
+  //   // 生成
 
-    // var newCanvas = document.createElement("canvas"); //创建一个canvas节点
-    // var scale = 1; //定义任意放大倍数 支持小数
-    // newCanvas.width = $('#sop').width() * scale; //定义canvas 宽度 * 缩放
-    // newCanvas.height = $('#sop').height() * scale; //定义canvas高度 *缩放
-    // newCanvas.getContext("2d").scale(scale, scale); //获取context,设置scale
-    html2canvas(document.getElementById('sop'), {
-      useCORS: true,
-      // scale: scale,
-      // canvas: newCanvas,
-      // height: $('#sop').height(),
-      // width: $('#sop').width(),
-      // dpi: window.devicePixelRatio,
-      // onrendered: function(canvas) {
-      //   $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
-      // }
-    }).then(function(canvas) {
-      // var context = canvas.getContext('2d');
-      // // 【重要】关闭抗锯齿
-      // context.mozImageSmoothingEnabled = false;
-      // context.webkitImageSmoothingEnabled = false;
-      // context.msImageSmoothingEnabled = false;
-      // context.imageSmoothingEnabled = false;
-      $('.savepage span').append(Canvas2Image.convertToBMP(canvas, canvas.width, canvas.height));
-      $('.savepage').show();
-      $('.load').hide();
-      // $('.item-2').append(canvas);
-    });
+  //   // var newCanvas = document.createElement("canvas"); //创建一个canvas节点
+  //   // var scale = 1; //定义任意放大倍数 支持小数
+  //   // newCanvas.width = $('#sop').width() * scale; //定义canvas 宽度 * 缩放
+  //   // newCanvas.height = $('#sop').height() * scale; //定义canvas高度 *缩放
+  //   // newCanvas.getContext("2d").scale(scale, scale); //获取context,设置scale
+  //   html2canvas(document.getElementById('sop'), {
+  //     useCORS: true,
+  //     // scale: scale,
+  //     // canvas: newCanvas,
+  //     // height: $('#sop').height(),
+  //     // width: $('#sop').width(),
+  //     // dpi: window.devicePixelRatio,
+  //     // onrendered: function(canvas) {
+  //     //   $('.item-2').append(Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height));
+  //     // }
+  //   }).then(function(canvas) {
+  //     // var context = canvas.getContext('2d');
+  //     // // 【重要】关闭抗锯齿
+  //     // context.mozImageSmoothingEnabled = false;
+  //     // context.webkitImageSmoothingEnabled = false;
+  //     // context.msImageSmoothingEnabled = false;
+  //     // context.imageSmoothingEnabled = false;
+  //     $('.savepage span').append(Canvas2Image.convertToBMP(canvas, canvas.width, canvas.height));
+  //     $('.savepage').show();
+  //     $('.load').hide();
+  //     // $('.item-2').append(canvas);
+  //   });
           
-  })
+  // })
   
   </script>
 </body>

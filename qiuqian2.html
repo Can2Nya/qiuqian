@@ -79,7 +79,7 @@
   <script src="/js/zepto.wechat.share.js"></script>
   <script src="/js/index.js"></script>
   <script>
-    playAudio('/media/02.mp3')
+    playAudio('/media/02.mp3');
     $('.wp-inner').fullpage({
       duration: 0,
       dir: 'h',
@@ -127,7 +127,7 @@
               // $('.item-2').append(canvas);
             });
           }, 300);
-          $.fn.fullpage.stop();
+          // $.fn.fullpage.stop();
         };
 
       // if(e.cur == 8) $.fn.fullpage.start();
@@ -143,8 +143,8 @@
         appId: 'wx6f9f274581430c76',
         // accessToken: data,
         ticket: data,
-        title: '2018，快来抽取专属你的新年签',
-        desc: '长按识别二维码即可获得2018专属幸运签',
+        title: '2018，快来抽取您的专属新年幸运签',
+        desc: '长按识别二维码即可获得您的2018专属幸运签',
         link: location.href,
         imgUrl: location.origin + '/img/share.jpg'
       };

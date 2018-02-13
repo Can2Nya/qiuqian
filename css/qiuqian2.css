@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+}
+body {
+  background: url('/img2/01/bg.jpg');
+  background-size: 100% 100%;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+.wp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.page-2 {
+  position: relative;
+}
+.page-2 .load {
+  padding: 2rem 0 0 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.item .miaoshu {
+  margin: .1rem auto 0 auto;
+}
+.item .miaoshu img {
+  height: .4rem;
+}
+.item button {
+  display: block;
+  margin: auto;
+  font-size: .3rem;
+  background: #d30000;
+  border: 0;
+  border-radius: 20px;
+  padding: .2rem .3rem;
+  color: yellow;
+}
+.item .flex {
+  display: flex;
+  flex-direction: column;
+}
+.item-1 .qiuqian {
+  background: url('../img/01/qiuqian.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 4.5rem;
+  margin-bottom: 1rem;
+}
+.item-1 input {
+  background: transparent;
+  font-size: .3rem;
+  border: 0;
+  color: red;
+  display: block;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  top: 2.5rem;
+}
+.item-1 #next {
+  position: relative;
+  top: 3.8rem;
+}
+.item-2 {
+  text-align: center;
+  position: relative;
+}
+.item-2 .miaoshu img {
+  height: 2.5rem;
+}
+.item-2 > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.item-2 > canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.item-2 .marign {
+  padding-top: 1.9rem;
+}
+.item-2 .bg,
+.item-2 .qian {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.item-2 .bg {
+  background: url('/img2/01/bg.jpg');
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.item-2 .qian {
+  margin-bottom: .1rem;
+  text-align: center;
+}
+.item-2 .qian img {
+  height: 3.3rem;
+}
+.item-2 .wenzi {
+  color: #f5c194;
+  font-size: .2rem;
+  text-align: center;
+}
+.item-2 .wenzi .t {
+  font-size: .4rem;
+}
+.item-2 #save {
+  visibility: hidden;
+  margin-top: .2rem;
+}
+.item-2 .savepage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: .4rem;
+  color: #fff;
+}
+.item-2 .savepage img {
+  height: 80%;
+  argin-top: .5rem;
+  margin-bottom: .2rem;
+  border: 7px solid white;
+}

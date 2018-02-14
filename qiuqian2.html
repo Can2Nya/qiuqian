@@ -79,7 +79,14 @@
   <script src="/js/zepto.wechat.share.js"></script>
   <script src="/js/index.js"></script>
   <script>
-    playAudio('/media/02.mp3');
+     window.onload = function() {
+      if (bgAudio.loadStatus !== 'unload') {return;}
+      playAudio('/media/03.mp3');
+    };
+    $('body').one('touchstart', function () {
+      playAudio('/media/03.mp3');
+        
+    });
     $('.wp-inner').fullpage({
       duration: 0,
       dir: 'h',
